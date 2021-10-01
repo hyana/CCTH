@@ -6,3 +6,8 @@ def isUnique(nums):
     else:
       seen.add(n)
   return True
+
+def main():
+    isUnique([1,2,3,4,1])
+
+main()

@@ -7,3 +7,8 @@ def checkPermutation(s, t):
         if c1 != c2:
             return False
     return True        
+
+def main():
+    checkPermutation("asdf","fdsa")
+
+main()
