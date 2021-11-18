@@ -13,16 +13,11 @@ class LinkedList:
         if(head is None):
             self.head = newNode
             return
-        if(head.data >= newNode.data):
-            newNode.next = head
-            self.head = newNode
-            return
-        else:
-            current = head
-            while(current.next and (current.next.data < newNode.data)):
-                current = current.next
-            newNode.next = current.next
-            current.next = newNode
+        current = head
+        while(current.next):
+            current = current.next
+        newNode.next = current.next
+        current.next = newNode
 
     def deleteFront(self):
         if(self.head.next is None):
@@ -64,7 +59,6 @@ def main():
     LL.insert(5)
     LL.insert(5)
     LL.insert(5)
-   
     LL.deleteDup()
     LL.printLL()
 main()
