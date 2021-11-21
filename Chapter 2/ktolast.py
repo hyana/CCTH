@@ -30,14 +30,6 @@ class LinkedList:
             print(node.data)
         return count
 
-
-    def printLL(self):
-        current = self.head
-        while(current):
-            print(current.data)
-            current = current.next
-
-
 def main():
     LL = LinkedList()
     LL.insert(4)
@@ -45,4 +37,5 @@ def main():
     LL.insert(5)
     LL.insert(5)
     node = LL.ktolast(LL.head, 2)
+    LL.printLL()
 main()
