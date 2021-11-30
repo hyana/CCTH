@@ -19,27 +19,26 @@ class LinkedList:
         newNode.next = current.next
         current.next = newNode
     
-    def partition(self, k):
+    def partition(self, x):
         current = self.head
-        head = current
-        tail = head
-        while(current.next):
-            nextNode = current.next
-            if(current.data < k):
-                current.next = head
-                head = current
-            else:
-                tail.next = current
-                tail = current
-            current = nextNode
-        tail.next = None
-        return tail
-
-    def printLL(self):
-        current = self.head
+        lroot = left = LinkedList()
+        rroot = right = LinkedList()
         while(current):
-            print(current.data)
+            if(current.data < x):
+                left.next = current
+                left = left.next
+            else:
+                right.next = current
+                right = right.next
             current = current.next
+        right.next = None
+        left.next = rroot.next
+        while(lroot.next):
+            print(lroot.next.data)
+            lroot = lroot.next
+
+        #because 0 is saved at first when we first made the linkedlists
+
 
 def main():
     LL = LinkedList()
@@ -52,5 +51,4 @@ def main():
     LL.insert(1)
     LL.insert(4)
     LL.partition(5)
-    LL.printLL()
 main()
